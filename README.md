@@ -73,9 +73,9 @@ Note: Please do not remove the bench directory the above commands will create
 
 * Add apps
 
-	The get-app command gets remote frappe apps from a remote git repository and installs them. Example: [erpnext](https://github.com/frappe/erpnext)
+	The get-app command gets remote frappe apps from a remote git repository and installs them. Example: [erpnext](https://github.com/awesome-erpnext/erpnext)
 
-		bench get-app erpnext https://github.com/frappe/erpnext
+		bench get-app erpnext https://github.com/awesome-erpnext/erpnext
 
 * Install apps
 
@@ -100,7 +100,8 @@ Note: Please do not remove the bench directory the above commands will create
 
 - This is an opinionated setup so it is best to setup on a blank server.
 - Works on Ubuntu 16.04+, CentOS 7+, Debian 8+
-- You may have to install Python 3 and other essentials by running `apt-get install python3-minimal build-essential python3-setuptools`
+- You may need to hit these commands as well `sudo apt install aptitude dirmngr curl software-properties-common -y`
+- You may have to install Python 3 and other essentials by running `apt-get install python3-minimal build-essential python3-setuptools redis-server`
 - This script will install the pre-requisites, install bench and setup an ERPNext site `(site1.local under frappe-bench)`
 - Passwords for Frappe Administrator and MariaDB (root) will be asked and saved under `~/passwoords.txt`
 - MariaDB (root) password may be `password` on a fresh server
@@ -124,7 +125,7 @@ If you are on a fresh server and logged in as root, at first create a dedicated 
 
 Switch to `[frappe-user]` (using `su [frappe-user]`) and start the setup
 
-	wget https://raw.githubusercontent.com/frappe/bench/master/playbooks/install.py
+	wget https://raw.githubusercontent.com/awesome-erpnext/bench/master/playbooks/install.py
 
 
 #### 1. Run the install script
@@ -184,15 +185,15 @@ $ bench setup manager
 
 What all it does:
 1. Create new site bench-manager.local
-2. Gets the `bench_manager` app from https://github.com/frappe/bench_manager if it doesn't exist already
+2. Gets the `bench_manager` app from https://github.com/awesome-erpnext/bench_manager if it doesn't exist already
 3. Installs the bench_manager app on the site bench-manager.local
 
 ## Docker Install - For Developers (beta)
 
-1. For developer setup, you can also use the official [Frappe Docker](https://github.com/frappe/frappe_docker/).
+1. For developer setup, you can also use the official [Frappe Docker](https://github.com/awesome-erpnext/frappe_docker/).
 2. The app, mariadb and redis run on individual containers
 3. This setup supports multi-tenancy and exposes the frappe-bench volume as a external storage.
-4. For more details, [read the instructions on the Frappe Docker README](https://github.com/frappe/frappe_docker/)
+4. For more details, [read the instructions on the Frappe Docker README](https://github.com/awesome-erpnext/frappe_docker/)
 
 
 Help
